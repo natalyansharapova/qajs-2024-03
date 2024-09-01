@@ -41,7 +41,7 @@ describe('Проверка функции nameIsValid', () => {
    it('Проверка длины имени', () => {
      expect(nameIsValid('z')).toBe(false)
   })
-  it('Проверка длины имени', () => {
+  it('Проверка латинских символов', () => {
    expect(nameIsValid('Шарапова')).toBe(false)
 })
 })
