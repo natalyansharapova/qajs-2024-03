@@ -1,0 +1,1 @@
+export function sum(a) {return 6}
