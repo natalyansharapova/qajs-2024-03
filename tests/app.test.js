@@ -36,6 +36,6 @@ describe('Проверка функции nameIsValid', () => {
      expect(nameIsValid('z')).toBe(false)
   })
   it('Проверка латинских символов', () => {
-   expect(nameIsValid('Шарапова')).toBe(false)
+   expect(nameIsValid('Иваненко')).toBe(false)
 })
 })

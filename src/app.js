@@ -44,3 +44,16 @@ export const getTotal = (items = [], discount = 0) => {
   }, 0);
   return total - (total * discount) / 100;
 };
+
+/**
+* Подсчёт общего балла
+* @param {{}} items
+* @example getScore({ A: 1, B: 2 }) // 3
+*/
+export const getScore = (items = {}) => {
+  let totalScore = 0
+  for (const key in items) {
+    totalScore += items[key]
+  }
+  return totalScore
+};
