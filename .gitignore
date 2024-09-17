@@ -2,3 +2,5 @@ node_modules
 coverage
 .idea
 build
+sum.test.js
+app.test.js
