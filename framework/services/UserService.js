@@ -11,5 +11,3 @@ export const DeleteUser = async  (userfordeleteID) => {
         userfordeleteID
     })
 }
-
-//export default {GenerateToken}
