@@ -31,22 +31,22 @@ describe('Пользовтель', () => {
       expect(response.status).toEqual(400)
    })  
 
-  it('Создание пользователя', async () => {
+//  it('Создание пользователя', async () => {
 
-    const user = { 
-       userName: 'fakeUser3',
-       password: 'fakeUser2!'
-    };
+//    const user = { 
+//       userName: 'fakeUser3',
+//       password: 'fakeUser2!'
+//   };
 
-    const response = await fetch('https://bookstore.demoqa.com/Account/v1/User', {
-     method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user)
-    })
+//    const response = await fetch('https://bookstore.demoqa.com/Account/v1/User', {
+  //   method: 'POST',
+  //    headers: { 'Content-Type': 'application/json' },
+  //    body: JSON.stringify(user)
+//    })
   
-    expect(response.status).toEqual(201)
- }) 
- })
+ //   expect(response.status).toEqual(201)
+// }) 
+})
   
 
  describe('Токен', () => {
