@@ -1,15 +1,25 @@
 import axios from 'axios'
+import config from '../config/config'
 
+const client = axios.create({
+  baseURL: config.baseURL + '/Account/v1/User/',
+  validateStatus: null,
+})
 
-export const GetUser = async  (userID) => {
-    return  await axios.get('https://bookstore.demoqa.com/Account/v1/GenerateToken',{
-        userID
-    })
+export const getUser = async (authToken, userId) => {
+  return await client.get(userId, {
+    headers: {
+      Authorization: 'Bearer ' + authToken,
+      'Content-Type': 'application/json',
+    },
+  })
 }
-export const DeleteUser = async  (userfordeleteID) => {
-    return  await axios.delete('https://bookstore.demoqa.com/Account/v1/GenerateToken',{
-        userfordeleteID
-    })
-}
 
-//export default {GenerateToken}
+export const deleteUser = async (authToken, userId) => {
+  return await client.delete(userId, {
+    headers: {
+      Authorization: 'Bearer ' + authToken,
+      'Content-Type': 'application/json',
+    },
+  })
+}

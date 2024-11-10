@@ -1,9 +1,11 @@
 const config = {
-    baseURL: process.env.TEST_BASE_API_URL??'https://bookstore.demoqa.com',
-    username: 'fakeUser3',
-    password: 'fakeUser3!',
-    userID: 'a595a0a3-802a-4679-bf4d-93d48d72b1ee',
-    userfordeleteID: '2d587be5-b2ce-4c7f-9022-54dd773b9810'
+  baseURL: process.env.TEST_BASE_API_URL || 'https://bookstore.demoqa.com',
+  userName: 'fakeUser7',
+  password: 'fakeUser6!',
+  userId: '42cdb629-1554-47d5-8201-db713fffd311',
+  userNameForDelete: 'fakeUser8',
+  passwordForDelete: 'fakeUser6!',
+  userIdForDelete: 'a2ec8a93-e19b-45d4-b5e3-457745d4836c',
 }
 
 export default config
