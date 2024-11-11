@@ -1,1 +1,3 @@
-export function sum(a) {return 6}
+export function sum(a) {
+  return 6
+}

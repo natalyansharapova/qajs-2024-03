@@ -1,2 +1,10 @@
-reports
+report
 build
+.github/workflows/ci.yml
+framework/config/config.js
+framework/services/AuthService.js
+framework/services/UserService.js
+jest.config.js
+src/app.js
+src/main.js
+src/sum.js
