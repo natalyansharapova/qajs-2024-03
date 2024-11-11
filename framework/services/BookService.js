@@ -1,28 +1,55 @@
 import axios from 'axios'
 import config from '../config/config'
 
-//Создание книги
-export const CreateBook = async  (userId,isbn) => {
-    return  await axios.post('https://bookstore.demoqa.com/BookStore/v1/Books',{
-        userId,
-        collectionOfIsbns: [
+const client = axios.create({
+  baseURL: config.baseURL,
+  validateStatus: null,
+})
+
+// Добавление книги
+export const createBook = async (authToken, userId, isbn) => {
+  return await client.post(
+    '/BookStore/v1/Books',
     {
-      isbn
-    }]
+      userId,
+      collectionOfIsbns: [
+        {
+          isbn,
+        },
+      ],
     },
-    {headers: { Authorization: `Bearer ${config.token}` }})
+    {
+      headers: {
+        Authorization: 'Bearer ' + authToken,
+        'Content-Type': 'application/json',
+      },
+    },
+  )
 }
 
-//Получение данных книги
-export const GetBook = async  (ISBN) => {
-    return  await axios.get('http://bookstore.demoqa.com/BookStore/v1/Book',
-        { params: { ISBN}},
-        {headers: { Authorization: `Bearer ${config.token}` }}) 
+// Получение данных книги
+export const getBook = async ISBN => {
+  return await client.get(
+    '/BookStore/v1/Book/',
+    { params: { ISBN } },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  )
 }
 
-//Удаление данных книги
-export const DeleteBook = async  (ISBN, userID) => {
-    return  await axios.delete('http://bookstore.demoqa.com/BookStore/v1/Book',
-       {headers: { Authorization: `Bearer ${config.token}` }},
-       { ISBN,userID}) 
+// Удаление данных книги
+export const deleteBook = async (authToken, isbn, userId) => {
+  return await client.delete(
+    '/BookStore/v1/Book',
+    { isbn, userId },
+    {
+      headers: {
+        Authorization: 'Bearer ' + authToken,
+        'Content-Type': 'application/json',
+      },
+    },
+  )
 }
